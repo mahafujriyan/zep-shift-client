@@ -1,10 +1,21 @@
 import React, { useContext } from 'react';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import ProfastLogo from './ProfestLogo/ProfestLogo';
 import { AuthContext } from '../../Pages/Context/AuthContext';
 
 const Navbar = () => {
-  const {user}=useContext(AuthContext)
+  const {user,logOut}=useContext(AuthContext)
+  const navigate =useNavigate()
+    const handleLogOut = () => {
+        logOut()
+            .then(result => { 
+              console.log(result)
+              navigate('/')
+
+            })
+            .catch(error => console.log(error))
+    }
+
     const navLinks =
     
     <>
@@ -59,7 +70,10 @@ const Navbar = () => {
 
       {/* End Section */}
   <div className="navbar-end">
-                <Link to="/logIn" className='btn btn-primary  text-black'>Login</Link>
+                {user ?
+                    <button onClick={handleLogOut} className='btn btn-primary text-black'>Log Out</button>
+                    :
+                    <Link to="/login" className='btn btn-primary  text-black'>Login</Link>}
             </div>
     </div>
    

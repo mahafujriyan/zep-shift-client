@@ -1,13 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router';
 import SocialLogIn from './SociallogIn';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../Context/AuthContext';
 
 const LogIn = () => {
        const { register, handleSubmit, formState: { errors } } = useForm();
+        const{singIn}=useContext(AuthContext)
+        const navigate=useNavigate()
+        const location=useLocation()
+         const from = location.state?.from || '/';
 
     const onSubmit = data => {
-        console.log(data);
+    singIn(data.email, data.password)
+            .then(result => {
+                console.log(result.user);
+                navigate(from);
+            })
+            .catch(error => console.log(error))
     }
     return (
          <div className="card bg-base-100 w-full  mx-auto max-w-sm shrink-0 shadow-2xl">

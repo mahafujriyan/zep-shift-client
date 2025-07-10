@@ -9,7 +9,8 @@ const MyParcels = () => {
         const { data: parcels = [], refetch } = useQuery({
         queryKey: ['my-parcels', user.email],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/parcels/user/${user.email}`);
+           const res = await axiosSecure.get(`/parcels?email=${user.email}`);
+
 
             return res.data;
         }
@@ -63,6 +64,8 @@ const MyParcels = () => {
     const formatDate = (iso) => {
         return new Date(iso).toLocaleString(); // Format: "6/22/2025, 3:11:31 AM"
     };
+    if (!user) return <p className="text-center text-gray-500">Loading user...</p>;
+
     return (
         <div className="overflow-x-auto shadow-md rounded-xl bg-gray-800 p-4">
             <table className="table table-zebra w-full">
