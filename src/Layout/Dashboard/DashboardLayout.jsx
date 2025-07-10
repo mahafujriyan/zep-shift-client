@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { Link, Outlet } from 'react-router';
+import { Link, NavLink, Outlet } from 'react-router';
 
 const DashboardLayout = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -33,7 +33,7 @@ const DashboardLayout = () => {
         </div>
 
         {/* Main Outlet for Page Content */}
-        <div className="bg-white p-4 rounded-xl shadow-sm">
+        <div className="bg-yellow-50 p-4 rounded-xl shadow-sm">
           <Outlet />
         </div>
       </div>

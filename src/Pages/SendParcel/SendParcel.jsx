@@ -74,12 +74,13 @@ const handleConfirm = async () => {
 
   try {
     const res = await axiosSecure.post('/parcels', finalData);
-   if (res.data?.insertedId) {
+   if (res.data?.id || res.data?.insertedId) {
   toast.success(`✅ Parcel saved! Tracking ID: ${trackingId}`);
   setModalOpen(false);
   reset();
-  navigate('/'); 
+  navigate('/');
 }
+
 
   } catch (err) {
     toast.error("❌ Failed to save parcel");
