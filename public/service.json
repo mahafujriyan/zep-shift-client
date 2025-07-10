@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Express & Standard Delivery",
+    "description": "Same-day or next-day delivery services for faster shipping across the city."
+  },
+  {
+    "title": "Nationwide Delivery",
+    "description": "Deliver to all 64 districts in Bangladesh with a trusted logistics network.",
+    "highlight": true
+  },
+  {
+    "title": "Fulfillment Solution",
+    "description": "Warehouse and pack services with end-to-end logistics support."
+  },
+  {
+    "title": "Cash on Home Delivery",
+    "description": "Let your customers pay after they receive the product at home."
+  },
+  {
+    "title": "Corporate Service / Contract in Logistics",
+    "description": "Custom solutions for business partners with bulk delivery support."
+  },
+  {
+    "title": "Parcel Return",
+    "description": "Hassle-free parcel return and refund handling through our network."
+  }
+]
