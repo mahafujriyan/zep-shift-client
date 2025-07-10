@@ -9,8 +9,7 @@ const MyParcels = () => {
         const { data: parcels = [], refetch } = useQuery({
         queryKey: ['my-parcels', user.email],
         queryFn: async () => {
-           const res = await axiosSecure.get(`/parcels?email=${user.email}`);
-
+            const res = await axiosSecure.get(`/parcels/user/${user.email}`);
 
             return res.data;
         }
@@ -65,7 +64,7 @@ const MyParcels = () => {
         return new Date(iso).toLocaleString(); // Format: "6/22/2025, 3:11:31 AM"
     };
     return (
-         <div className="overflow-x-auto shadow-md rounded-xl">
+        <div className="overflow-x-auto shadow-md rounded-xl bg-gray-800 p-4">
             <table className="table table-zebra w-full">
                 <thead className="bg-base-200 text-base font-semibold">
                     <tr>
@@ -82,10 +81,10 @@ const MyParcels = () => {
                     {parcels.map((parcel, index) => (
                         <tr key={parcel._id}>
                             <td>{index + 1}</td>
-                            <td className="max-w-[180px] truncate">{parcel.title}</td>
-                            <td className="capitalize">{parcel.type}</td>
-                            <td>{formatDate(parcel.creation_date)}</td>
-                            <td>৳{parcel.cost}</td>
+                            <td className="max-w-[180px] truncate">{parcel.title || 'N/A'}</td>
+                            <td className="capitalize">{parcel.type || 'N/A'}</td>
+                            <td>{parcel.creation_date ? formatDate(parcel.creation_date) : 'N/A'}</td>
+                            <td>৳{parcel.cost !== undefined ? parcel.cost : 'N/A'}</td>
                             <td>
                                 <span
                                     className={`badge ${parcel.payment_status === "paid"
@@ -93,7 +92,7 @@ const MyParcels = () => {
                                         : "badge-error"
                                         }`}
                                 >
-                                    {parcel.payment_status}
+                                    {parcel.payment_status || 'unpaid'}
                                 </span>
                             </td>
                             <td className="space-x-2">
@@ -103,7 +102,7 @@ const MyParcels = () => {
                                 >
                                     View
                                 </button>
-                                {parcel.payment_status === "unpaid" && (
+                                {(parcel.payment_status ?? 'unpaid') === "unpaid" && (
                                     <button
                                         onClick={() => handlePay(parcel._id)}
                                         className="btn btn-xs btn-primary text-black"

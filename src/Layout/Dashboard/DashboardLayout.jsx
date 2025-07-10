@@ -33,7 +33,7 @@ const DashboardLayout = () => {
         </div>
 
         {/* Main Outlet for Page Content */}
-        <div className="bg-yellow-50 p-4 rounded-xl shadow-sm">
+        <div className="bg-gray-800 p-4 rounded-xl shadow-sm">
           <Outlet />
         </div>
       </div>

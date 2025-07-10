@@ -66,11 +66,14 @@ const handleConfirm = async () => {
   const trackingId = uuidv4().slice(0, 10).toUpperCase();
 
   const finalData = {
-    ...parcelData,
-    trackingId,
-      email: user?.email,
-    creation_date: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
-  };
+  ...parcelData,
+  trackingId,
+  email: user?.email,
+  cost: cost,
+  payment_status: "unpaid",
+  creation_date: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
+};
+
 
   try {
     const res = await axiosSecure.post('/parcels', finalData);
