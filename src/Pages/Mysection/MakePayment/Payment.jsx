@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
+import StripeProvider from '../../Context/StripeProvider/StripeProvider';
 
 const Payment = () => {
      const { id } = useParams();

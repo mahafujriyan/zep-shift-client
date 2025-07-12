@@ -71,7 +71,7 @@ const router = createBrowserRouter([
      
       },
       {
-        path:'payment/parcelId',
+        path:'payment/:id',
         element:<Payment></Payment>
       }
     ]
