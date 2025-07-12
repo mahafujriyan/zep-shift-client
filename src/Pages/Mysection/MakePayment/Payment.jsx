@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
 import StripeProvider from '../../Context/StripeProvider/StripeProvider';
+import PaymentForm from './PaymentForm';
 
 const Payment = () => {
      const { id } = useParams();
@@ -9,7 +10,7 @@ const Payment = () => {
     <div className="max-w-md mx-auto mt-10 bg-white p-6 rounded-lg shadow-md">
       <h2 className="text-xl font-bold mb-4 text-center">Pay for Parcel</h2>
       <StripeProvider>
-        <CheckoutForm parcelId={id} />
+        <PaymentForm parcelId={id} />
       </StripeProvider>
     </div>
   );
