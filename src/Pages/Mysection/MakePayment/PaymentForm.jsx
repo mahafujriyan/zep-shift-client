@@ -65,13 +65,13 @@ const PaymentForm = ({parcelId}) => {
     return (
         <form onSubmit={handleSubmit}>
       <CardElement className="p-4 border border-gray-300 rounded-md mb-4" />
-      {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+      {error && <p className="text-red-400 text-sm mb-2">{error}</p>}
       <button
         type="submit"
         disabled={!stripe || !elements}
         className="btn btn-primary w-full"
       >
-        Pay ৳{parcel?.cost || '....'}
+        Pay ৳{parcel?.cost || '...'}
       </button>
     </form>
     );
