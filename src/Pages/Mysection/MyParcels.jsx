@@ -48,7 +48,7 @@ const MyParcels = () => {
                         if (res.data.deletedCount) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Parcel has been deleted.",
+                                text: "Parcel has been deleted successfully.",
                                 icon: "success",
                                 timer: 1500,
                                 showConfirmButton: false,
