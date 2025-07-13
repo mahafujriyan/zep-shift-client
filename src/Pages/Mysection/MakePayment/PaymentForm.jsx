@@ -71,7 +71,7 @@ const PaymentForm = ({parcelId}) => {
         disabled={!stripe || !elements}
         className="btn btn-primary w-full"
       >
-        Pay ৳{parcel?.cost || '...'}
+        Pay ৳{parcel?.cost || '....'}
       </button>
     </form>
     );
