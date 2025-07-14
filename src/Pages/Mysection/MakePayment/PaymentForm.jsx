@@ -59,7 +59,7 @@ const PaymentForm = ({parcelId}) => {
       await axiosSecure.patch(`/parcels/payment/${parcelId}`, {
         transactionId: paymentIntent.id,
       });
-      navigate('/myParcels');
+      navigate('/dashboard/myParcels');
     }
   };
     return (

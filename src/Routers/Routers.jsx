@@ -14,6 +14,7 @@ import DashboardLayout from '../Layout/Dashboard/DashboardLayout';
 import PrivateRoute from './PrivateRoute';
 import MyParcels from '../Pages/Mysection/MyParcels';
 import Payment from '../Pages/Mysection/MakePayment/Payment';
+import PaymentHistory from '../Pages/Mysection/MakePayment/PaymentHistory';
 
 const router = createBrowserRouter([
   {
@@ -74,7 +75,12 @@ const router = createBrowserRouter([
     {
       path: 'payment/:id', 
       element: <Payment />
+    },
+    {
+        path: 'payment-history',
+        element: <PaymentHistory />
     }
+
   ]
 }
 
