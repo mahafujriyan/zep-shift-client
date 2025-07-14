@@ -15,6 +15,7 @@ import PrivateRoute from './PrivateRoute';
 import MyParcels from '../Pages/Mysection/MyParcels';
 import Payment from '../Pages/Mysection/MakePayment/Payment';
 import PaymentHistory from '../Pages/Mysection/MakePayment/PaymentHistory';
+import DashboardOverview from '../Pages/Mysection/DashboardOverview';
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,11 @@ const router = createBrowserRouter([
     </PrivateRoute>
   ),
   children: [
+    {
+      index:true,
+      element:<DashboardOverview></DashboardOverview>
+
+    },
     {
       path: 'myParcels', 
       element: <MyParcels/>

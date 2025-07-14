@@ -81,7 +81,7 @@ const handleConfirm = async () => {
   toast.success(`✅ Parcel saved! Tracking ID: ${trackingId}`);
   setModalOpen(false);
   reset();
-  navigate('/');
+  navigate('/dashboard');
 }
 
 

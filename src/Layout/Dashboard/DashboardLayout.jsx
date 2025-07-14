@@ -13,7 +13,7 @@ const DashboardLayout = () => {
       {/* Sidebar / Navbar */}
       <div className={`lg:w-1/4 w-full bg-black shadow-md z-20 ${drawerOpen ? 'block' : 'hidden'} lg:block`}>
       
-        <div className="p-4 border-b flex justify-between items-center lg:hidden">
+        <div className="p-4 border-b object-cover flex justify-between items-center lg:hidden">
         
           <h2 className="text-xl font-semibold">Dashboard Menu</h2>
           <button onClick={toggleDrawer} className="btn btn-sm">Close</button>
@@ -21,7 +21,7 @@ const DashboardLayout = () => {
         <ul className="menu p-4  space-y-2">
             <ProfastLogo></ProfastLogo>
             <li>
-    <NavLink to="/" className="flex items-center gap-2">
+    <NavLink to="/dashboard" className="flex items-center gap-2">
       <FaHome /> Home
     </NavLink>
   </li>
