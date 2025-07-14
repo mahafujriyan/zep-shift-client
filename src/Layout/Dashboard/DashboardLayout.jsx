@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Link, NavLink, Outlet } from 'react-router';
 import ProfastLogo from '../../Component/Shared/ProfestLogo/ProfestLogo';
-
+import { FaHome, FaBoxOpen, FaMoneyCheckAlt, FaSearchLocation, FaUserEdit } from 'react-icons/fa';
 const DashboardLayout = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -20,11 +20,31 @@ const DashboardLayout = () => {
         </div>
         <ul className="menu p-4  space-y-2">
             <ProfastLogo></ProfastLogo>
-          <li><NavLink to="/">Home</NavLink></li>
-         
-           <li><NavLink to="/dashboard/myParcels">My Parcels</NavLink></li>
-           <li><NavLink to="/dashboard/payment-history">Payment History</NavLink></li>
-           <li><NavLink to="/dashboard/myParcels">Track a Package</NavLink></li>
+            <li>
+    <NavLink to="/" className="flex items-center gap-2">
+      <FaHome /> Home
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/dashboard/myParcels" className="flex items-center gap-2">
+      <FaBoxOpen /> My Parcels
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/dashboard/payment-history" className="flex items-center gap-2">
+      <FaMoneyCheckAlt /> Payment History
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/dashboard/myParcels" className="flex items-center gap-2">
+      <FaSearchLocation /> Track a Package
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/dashboard/myParcels" className="flex items-center gap-2">
+      <FaUserEdit /> Update Profile
+    </NavLink>
+  </li>
           
         </ul>
       </div>

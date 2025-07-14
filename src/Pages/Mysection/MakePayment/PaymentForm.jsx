@@ -58,6 +58,8 @@ const PaymentForm = ({parcelId}) => {
     if (paymentIntent.status === 'succeeded') {
       await axiosSecure.patch(`/parcels/payment/${parcelId}`, {
         transactionId: paymentIntent.id,
+         email: parcel?.email, 
+    method: paymentMethod.card?.brand || 'card'
       });
       navigate('/dashboard/myParcels');
     }
