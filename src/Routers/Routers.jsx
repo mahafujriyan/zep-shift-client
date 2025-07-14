@@ -66,7 +66,7 @@ const router = createBrowserRouter([
     </PrivateRoute>,
     children: [
       {
-        path: 'myParcels',
+        path: '/myParcels',
         element:<MyParcels></MyParcels>
      
       },
