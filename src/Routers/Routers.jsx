@@ -59,23 +59,25 @@ const router = createBrowserRouter([
       
     ]
   },
-  {
-    path: '/dashboard',
-    element: <PrivateRoute>
-      <DashboardLayout></DashboardLayout>
-    </PrivateRoute>,
-    children: [
-      {
-        path: '/myParcels',
-        element:<MyParcels></MyParcels>
-     
-      },
-      {
-        path:'payment/:id',
-        element:<Payment></Payment>
-      }
-    ]
-  },
+ {
+  path: '/dashboard',
+  element: (
+    <PrivateRoute>
+      <DashboardLayout />
+    </PrivateRoute>
+  ),
+  children: [
+    {
+      path: 'myParcels', 
+      element: <MyParcels/>
+    },
+    {
+      path: 'payment/:id', 
+      element: <Payment />
+    }
+  ]
+}
+
 ]);
 
 export default router;
